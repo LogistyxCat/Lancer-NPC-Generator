@@ -1,13 +1,11 @@
 <# 
     Date:    2018-09-22
-    Version: 0.6
+    Version: 0.6.3
     Comment: Generates an enemy NPC for LANCER based on NPC Classes and Templates
 #>
 <# To do
 1) Add the ability to attach multiple (non-exclusive) templates
-    a) Needs to add/remove tags as is necessary
-    b) Needs to switch out tags where necessary
-    c) Needs to edit statistics if required
+    a) Needs to replace tags where necessary (eg. Vehicle template)
 2) Add tier modifications
 3) Add the ability to select optional modules
 4) Add the ability to add template modules
@@ -65,6 +63,7 @@ function modDurability {
     }
 }
 
+# Adds the base class modules to final output
 function addModules {
     $modules = Get-Content -Raw -Path .\Modules.json | ConvertFrom-Json
     foreach ($mod in $BaseClass.Modules) {
@@ -89,6 +88,7 @@ function addTemplate {
         $userInput = Read-Host -Prompt "`nEnter ID value`n>"
         if ($templates.$userInput) {
             $Template = $templates.$userInput
+            # Remove the template so you can't apply the same one again
             $templates.PsObject.Properties.Remove($userinput)
             $templates.Index.PsObject.Properties.Remove($userinput)
             break
@@ -109,8 +109,6 @@ function addTemplate {
         }
     }
 
-    # Modify $BaseClass with the $Template attributes
-
     # Modify the $BaseClass.Tags value
     $tags = $BaseClass.Tags + $Template.Name
     Add-Member -InputObject $BaseClass -MemberType NoteProperty -Name Tags -Value $tags -Force
@@ -119,6 +117,7 @@ function addTemplate {
     modHP
     modDurability
 
+    # Add all of the new properties
     foreach ($p in Get-Member -InputObject $Template -MemberType Properties  | Sort-Object -Property Definition | Select-Object -Property Name | Sort-Object -Property Definition | Where-Object -NotMatch -Property "Name" -Value "Name") {
         Add-Member -InputObject $BaseClass -MemberType NoteProperty -Name $p.Name -Value $Template.$($p.Name) -WarningAction SilentlyContinue
     }
@@ -132,6 +131,16 @@ function addTemplate {
         saveDialog
     }
     elseif ($userInput.ToLower().StartsWith("y")) {
+        # Remove other Exclusive templates
+        if ($Template.Exclusive) {
+            foreach ($t in $templates.PsObject.Properties.Name) {
+                if ($templates.$t.Exclusive) {
+                    $templates.PsObject.Properties.Remove($t)
+                    $templates.Index.PsObject.Properties.Remove($t)
+                }
+            }
+        }
+        # Loop
         addTemplate
     }
     else {
