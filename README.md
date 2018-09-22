@@ -15,9 +15,13 @@ You can save the generated NPC with the file name you wish. The script auto-appe
 There is a Discord server dedicated to Lancer. You can join here: https://discord.gg/KnGuxSz
 
 The Official Lancer RPG Twitter: https://twitter.com/Lancer_RPG
+
 Tom's Twitter: https://twitter.com/orbitaldropkick
+
 Miguel's Twitter: https://twitter.com/the_one_lopez
+
 Tom has a Patreon, please go support him and read his comic: https://www.patreon.com/killsixbilliondemons
+
 Miguel has a website full of good stories, give them a read: http://www.onlyonelopez.com/
 
 DISCLAIMER:
