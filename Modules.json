@@ -1,0 +1,434 @@
+{
+    "SS Corpro flight system": [
+        "System",
+        "Whenever this mech moves or boost, it can fly."
+    ],
+    "Flight Computer": [
+        "System",
+        "Once per turn, this mech can make a boost action as a Free Action. It loses these benefits if the",
+        "flight computer is destroyed."
+    ],
+    "Missile Launcher": [
+        "+1 vs evasion/tier",
+        "Range 10, Blast 1",
+        "4/6/8 explosive damage"
+    ],
+    "Light Laser": [
+        "Main cannon",
+        "+3 vs evasion/tier",
+        "Range 8",
+        "1 energy damage + 2 burn/tier"
+    ],
+    "Defense Net": [
+        "System, Shield, Quick Action",
+        "This system spreads a powerful shimmering repulsion shield over a large area. While this system",
+        "is active, this mech is immobilized, but all attacks against any target within a burst 3 zone around",
+        "the mech originating outside of that zone take +1 Difficulty/tier. Attacks out of the zone or",
+        "between targets that are both inside of the zone are unaffected. It can be deactivated as an",
+        "action."
+        ],
+    "Kai Bioplating": [
+        "Trait",
+        "This mech gains +1 Accuracy on all agility checks. It can climb with no penalty, takes no penalty",
+        "for difficult terrain, and doesn't make dangerous terrain tests."
+        ],
+    "Variable Knife": [
+        "Auxilliary Melee",
+        "AP",
+        "+1 vs evasion/tier with 1 Accuracy/tier",
+        "Threat 2",
+        "3/4/6 kinetic damage"
+    ],
+    "Pulse Rifle": [
+        "Heavy rifle",
+        "+1 vs evasion/tier with 3 Accuracy",
+        "Range 12",
+        "5/7/9 energy damage"
+    ],
+    "Snap Fire (Assassin)": [
+        "Trait, Quick Action",
+        "This mech attacks with a single weapon (using its listed profile - could include multiple attack",
+        "rolls)."
+    ],
+    "Heavy Assault Rifle": [
+        "Main Rifle",
+        "Range 10",
+        "+2 vs evasion/tier with 1 Accuracy",
+        "5/7/9 kinetic damage"
+    ],
+    "Combat Knife": [
+        "Auxiliary Melee",
+        "Threat 1",
+        "+1 vs evasion/tier",
+        "4/6/8 kinetic damage"
+    ],
+    "Cycle Lance": [
+        "Main Cannon",
+        "Range 10",
+        "+0 vs evasion with 1 Accuracy/tier",
+        "4 energy damage",
+        "This weapon can attack twice at tier III with the attack action."
+    ],
+    "Mobile Printer": [
+        "Recharge 6+",
+        "As a free action at the start of its turn, the barricade may print a line 3 section of size 3 cover (3",
+        "spaces high) in any adjacent and free space. The cover provides heavy cover and has evasion 5",
+        "and 30 HP."
+        ],
+    "Shock Plating": [
+        "System",
+        "The Barricade has resistance to kinetic damage."
+    ],
+    "Rotary Grenade Launcher": [
+        "Main Launcher",
+        "Arcing, Loading",
+        "+1 vs evasion/tier",
+        "Range 8, Blast 2",
+        "5/8/10 explosive damage"
+    ],
+    "Heavy Assault Shield": [
+        "Heavy Melee",
+        "Threat 1",
+        "+1 vs evasion/tier",
+        "2 kinetic damage/tier",
+        "As a quick action, the Bastion can deploy or retract its shield as a line 2, size 2 piece of heavy",
+        "cover, disarming it of this weapon. The Bastion can leave the shield deployed and move away",
+        "from it if it so wishes (it can pick it up again as a quick action). Any mech that gains the benefit of",
+        "this cover against an attack also has resistance to all damage from that attack. The cover has",
+        "evasion 5 and 20 HP and can be attacked and destroyed as normal."
+        ],
+    "Chain Axe": [
+        "Heavy melee",
+        "+2 vs evasion/tier with +1 Accuracy",
+        "Threat 1",
+        "5/7/10 kinetic damage",
+        "This weapon deals an extra +1d6 damage/tier on critical hits."
+    ],
+    "Volcanic Re-route": [
+        "System, Protocol",
+        "The Berserker can choose to activate or de-activate this system at the start of its turns. While",
+        "this system is active, the Berserker can make two attacks with its chain axe when it takes the",
+        "attack action, but it takes 4 heat at the end of its turn."
+        ],
+    "Bombard Cannon": [
+        "Ordnance, Arcing, Loading",
+        "+2 vs evasion/tier with 1 difficulty",
+        "Range 20, Blast 2",
+        "8/12/16 kinetic damage"
+    ],
+    "Stabilizers": [
+        "System, Full Action",
+        "As a full action, this mech can engage or disengage its stabilizers. While they are active, the",
+        "mech cannot move or be knocked prone, but it gains +1 accuracy and +10 range on its attacks",
+        "and cannot fire any weapons at a target within range 5 of itself. If this system is destroyed, the",
+        "mech is immobilized."
+        ],
+    "Molded Armor": [
+        "System",
+        "The Bombard has resistance to explosive damage."
+    ],
+    "Dual Shotguns": [
+        "Main CQB",
+        "+1 vs evasion/tier with 2 difficulty",
+        "Range 3, Threat 3",
+        "5/7/10 kinetic damage",
+        "The Breacher can attack twice with this weapon with the attack action, choosing the same or",
+        "different targets."
+    ],
+    "BREACH Ram": [
+        "Quick action, Recharge (5+)",
+        "The breacher moves forward in a straight line as far as it can, up to its speed. It ignores",
+        "engagement and obstruction (even for obstacles or mechs passed through). Obstacles or",
+        "objects such as cover are punched or smashed through and take 10 AP kinetic damage/tier. If",
+        "the obstacle is an especially hardy composition (such as a starship hull) the breacher can make a",
+        "successful hull check to smash through instead. All other targets passed through must pass a",
+        "hull check with 1 difficulty or be knocked out of the breacher's path and knocked prone."
+    ],
+    "Ram cannon": [
+        "Heavy Melee/Heavy Cannon",
+        "+0 vs evasion with 1 Accuracy/tier",
+        "Range 8, Threat 2",
+        "4/6/8 kinetic damage",
+        "This lance-like weapon can be fired with either profile (used as a melee or ranged weapon), but",
+        "not both in the same turn."
+    ],
+    "Impact thrusters": [
+        "System, Full Action",
+        "Recharge (5+)",
+        "The Cataphract charges, moving 6 in a straight line in a direction of its choosing. It can ignore",
+        "obstructions caused by enemies. Hostile targets that it passes through must pass a hull or agility",
+        "check or take 2 kinetic damage/tier and be knocked prone."
+    ],
+    "Snap Fire (Cataphract)": [
+        "Trait, Quick Action",
+        "This mech makes one ram cannon attack."
+    ],
+    "Demolisher hammer": [
+        "Superheavy Melee",
+        "Threat 2",
+        "-1 vs evasion with 1 difficulty (no difficulty at tier II, +1 Accuracy at tier III)",
+        "10/15/20 explosive damage",
+        "This weapon deals double damage against structures, objects, the environment, and cover and",
+        "gains +2 Accuracy against them."
+    ],
+    "Kinetic compensation": [
+        "System",
+        "If the Demolisher misses with its hammer attack, it gains +1 Accuracy on subsequent attacks",
+        "until it hits. This effect stacks."
+    ],
+    "Flak Cannon": [
+        "Heavy Cannon",
+        "Smart",
+        "+1 vs e-defense/tier",
+        "Range 15",
+        "4/6/8 kinetic damage",
+        "This weapon gains +1 Accuracy against flying targets. Flying targets damaged by this weapon",
+        "must pass an agility check or fall."
+    ],
+    "Deployable turret": [
+        "System, Drone, Quick Action, Recharge (4+)",
+        "The engineer deploys a self-building turret in an adjacent, open space. The turret is an immobile",
+        "size 1 drone with simple AI that attacks the nearest hostile target. It has evasion 10, 10 HP, and 1",
+        "armor. It attacks on the Engineer's turn for +1/tier vs evasion, range 10, 2/3/4 kinetic damage,",
+        "but can take no other actions."
+    ],
+    "Ablative Shielding": [
+        "System",
+        "The Engineer has resistance to energy damage."
+    ],
+    "Hunter Killer Drone Nexus": [
+        "Main Nexus",
+        "Smart, Seeking",
+        "Range 15",
+        "+2 vs e-defense/tier",
+        "5 energy damage",
+        "This weapon can attack twice at tier III with the attack action."
+    ],
+    "Drone Barrage Protocol": [
+        "System",
+        "The Hive directs its drones to run interference on a target of its choice. 1/round, as a Free Action,",
+        "a Hive can cause one target damaged by its nexus weapons to pass a systems skill check or",
+        "become Crippled or Impaired (the Hive's choice) until the start of the hive's next turn."
+    ],
+    "Stinger Pistol": [
+        "Auxiliary CQB",
+        "Range 8, Threat 3",
+        "+1 vs evasion/tier with +1 accuracy/tier",
+        "1/2/3 energy damage",
+        "Targets struck by this pistol must pass an engineering skill check or become impaired until the",
+        "end of the hornet's next turn."
+    ],
+    "SSC Total Suite": [
+        "Trait",
+        "The Hornet can fly when it moves or boosts with hover flight."
+    ],
+    "Phosphorous barrage": [
+        "Full Action, Recharge (6+)",
+        "A target in range 15 must pass an engineering skill check with 1 difficulty/tier or take 2 heat/tier",
+        "and become jammed until the end of the hornet's next turn. On a successful check, it is not",
+        "jammed but still takes 2 heat/tier."
+    ],
+    "Snap Fire (Hornet)": [
+        "Trait, Quick action",
+        "The Hornet attacks once with the Stinger pistol."
+    ],
+    "High Caliber Pistol": [
+        "Auxiliary CQB",
+        "+2 vs evasion/tier",
+        "Range 8, Threat 3",
+        "3/4/5 kinetic damage"
+    ],
+    "Target Marker": [
+        "Main rifle",
+        "Smart",
+        "+1 vs e-defense/tier with 1 Accuracy",
+        "Range 20",
+        "Targets hit by this attack immediately gain the Lock On condition. They then cannot turn invisible",
+        "or benefit from invisibility, and cannot hide until the end of the Marker's next turn. If the Marker is",
+        "destroyed or this weapon is disabled, immediately end this condition."
+    ],
+    "'Raptor' plasma rifle": [
+        "Heavy Rifle",
+        "+2 vs evasion/tier",
+        "Range 15",
+        "6 energy damage",
+        "This weapon can attack twice at tier III with the attack action."
+    ],
+    "'Nightcloak' type omnishield": [
+        "System, Shield",
+        "While this system is active, the operator has resistance to one of the following types of damage:",
+        "kinetic, explosive, energy, heat. The operator must decide which when it starts combat (setting it",
+        "is a Free Action) and cannot change it during combat."
+    ],
+    "Self-erasing": [
+        "Trait",
+        "When this mech is destroyed, it immediately self-immolates into superheated plasma. All targets",
+        "adjacent to it when it is destroyed must pass an agility check or take 4/6/8 energy damage or",
+        "half on a successful check. This mech is then removed from the battlefield - it is utterly",
+        "annihilated."
+    ],
+    "Snap Fire (Operator)": [
+        "Trait, Quick Action",
+        "The Operator makes one attack with its plasma rifle."
+    ],
+    "Flamethrower": [
+        "Heavy CQB",
+        "Cone 5",
+        "+1 vs evasion/tier",
+        "4 heat (self)",
+        "Burn 3/4/6 + 2/4/6 heat"
+    ],
+    "Explosive Vent": [
+        "System, Full Action",
+        "The pyro cools to 0 heat. Targets caught in a burst 1 area around it must pass an engineering",
+        "check or take half of the heat the pyro cools as heat to themselves and be knocked prone."
+    ],
+    "Thundershock missile pods": [
+        "Main launcher",
+        "Arcing",
+        "+2 vs evasion/tier",
+        "One, two, or three targets in range 15",
+        "2/3/4 explosive damage"
+    ],
+    "'Drang' missile rack": [
+        "Ordnance, Loading",
+        "Line 15",
+        "+1 vs evasion/tier",
+        "6/9/12 explosive damage"
+    ],
+    "Carbon Fiber Sword": [
+        "Main Melee",
+        "+2 vs evasion with 1 Accuracy/tier",
+        "Threat 1",
+        "4 kinetic damage",
+        "This weapon can attack once per tier (up to 3 times at tier 3) with the attack action.",
+        "This weapon can critical hit, and deals an extra +1d6 kinetic damage on critical hit."
+    ],
+    "Mag Parry": [
+        "System, Shield, Reaction",
+        "Once per round, when damaged by a ranged weapon, the Ronin can roll a d6. On a roll of a 5+,",
+        "the Ronin gains resistance to all the damage from that attack, and the target must repeat the",
+        "attack roll against itself, dealing damage on a success."
+    ],
+    "Snap Fire (Ronin)": [
+        "Trait, Quick Action",
+        "The Ronin attacks once with its Carbon Fiber Sword."
+    ],
+    "Thermal Lance": [
+        "Heavy Cannon",
+        "2 heat (self)",
+        "+0 vs evasion with +1 Accuracy at tier II and +2 Accuracy at tier III",
+        "Range 8",
+        "4/6/8 energy damage"
+    ],
+    "Cooling Module": [
+        "System",
+        "If the Scourer did not move or boost at all this turn, it reduces its heat to 0."
+    ],
+    "Grav Grenade Launcher": [
+        "Main Launcher",
+        "Arcing",
+        "+2 vs evasion/tier",
+        "Range 10, blast 1",
+        "2/3/4 explosive damage",
+        "This weapon deals 3/5/7 damage if it catches more than 1 target in its blast."
+    ],
+    "Mine Deployer": [
+        "System, free action, recharge (4+)",
+        "The seeder lays a mine in a space within range 3 of it. It cannot place a mine adjacent to another",
+        "mine. The mine arms at the end of the round. Once armed, the next target other than the seeder",
+        "to become adjacent to it must pass a systems check or trigger the mine. That target, and any",
+        "caught in a burst 1 area centered on the mine must pass an agility check or take 6/9/12",
+        "explosive damage, and half on a successful check."
+    ],
+    "Combat Shotgun": [
+        "Main CQB",
+        "Range 3, Threat 3",
+        "+2 vs evasion/tier with 1 Accuracy",
+        "5/7/9 kinetic damage"
+    ],
+    "Retractable Sword": [
+        "Main Melee",
+        "Threat 1",
+        "+2 vs evasion/tier",
+        "3/5/7 kinetic damage"
+    ],
+    "Eye of Midnight": [
+        "System, Quick Action",
+        "This system can be activated or deactivated as a quick action, and remains indefinitely. While",
+        "this system is active, the Sentinel is crippled, but is not limited in the number of overwatch",
+        "reactions it can make per round."
+    ],
+    "Anti-Material Rifle": [
+        "Heavy Rifle",
+        "Loading, Ordnance, AP",
+        "+1 vs evasion/tier with +2 Accuracy/tier",
+        "Range 30",
+        "8/12/16 kinetic damage"
+    ],
+    "Auto-pistol": [
+        "Auxiliary CQB",
+        "+0 vs evasion with +1 Accuracy at tier II, +2 Accuracy at tier III",
+        "Range 8, Threat 3",
+        "2/3/4 kinetic damage"
+    ],
+    "Deathmark protocol": [
+        "System, Full Action",
+        "BThe Sniper marks a target within range 20. While marked, the Sniper's anti material rifle attacks",
+        "against that target causes it to take 1 structure damage on hit instead of dealing damage",
+        "normally (causing the target to make a critical check and reset its HP). The Sniper can only have",
+        "one mark active at a time, but can transfer it if need be. The target can avoid this effect if it is in",
+        "any kind of cover, or if it's prone (it is aware of this effect), and instead takes damage normally."
+    ],
+    "Machine pistol": [
+        "Auxiliary CQB",
+        "+2 vs evasion/tier",
+        "Range 5, Threat 3",
+        "4 kinetic damage",
+        "This weapon can attack twice at tier III with the attack action."
+    ],
+    "ATHENA-class scan": [
+        "System, quick action, recharge (4+)",
+        "One target in range 10 of the specter's choice must make a systems skill check (the specter can",
+        "guess they are there and doesn't need line of sight). If they fail, they are revealed from hiding and",
+        "lose the benefits of hiding or invisibility and cannot hide or turn invisible until the start of the",
+        "spectre's next turn."
+    ],
+    "Tactical Cloak": [
+        "System",
+        "The spectre is permanently invisible while this system is intact."
+    ],
+    "Suppressive cannon": [
+        "Main cannon",
+        "Ordnance",
+        "+2 vs evasion/tier",
+        "Range 10",
+        "4 kinetic damage",
+        "This weapon can be fired an additional time at tier III with the attack action",
+        "Targets damaged by this cannon suffer from the impaired condition until the end of their next",
+        "turn."
+    ],
+    "Latch drone": [
+        "System, Recharge (5+)",
+        "As a free action, the support fires a drone to a point within range 5 of its position, where it",
+        "hovers. The drone can be attacked and destroyed. It is a size 1 drone with evasion 10 and 10 HP.",
+        "The drone clamps on to the next allied mech to move through or adjacent to that drone's space",
+        "and discharges, healing that mech 5/7/10 HP."
+    ],
+    "Autogun": [
+        "Auxiliary rifle",
+        "Smart",
+        "Range 10",
+        "+2 vs e-defense/tier",
+        "4 kinetic damage",
+        "This weapon can attack twice at tier III with the attack action."
+    ],
+    "HORUS hacker": [
+        "Trait",
+        "This mech makes tech actions with +1 Accuracy and its invasions deal +1/2/3 heat on hit."
+    ],
+    "Snap Fire (Technical)": [
+        "Trait, Quick Action",
+        "This mech makes one autogun attack."
+    ]
+}

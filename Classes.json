@@ -1,0 +1,576 @@
+{
+  "Index": {
+    "1": "Ace",
+    "2": "Aegis",
+    "3": "Assassin",
+    "4": "Assault",
+    "5": "Barricade",
+    "6": "Bastion",
+    "7": "Berserker",
+    "8": "Bombard",
+    "9": "Breacher",
+    "10": "Cataphract",
+    "11": "Demolisher",
+    "12": "Engineer",
+    "13": "Hive",
+    "14": "Hornet",
+    "15": "Marker",
+    "16": "Operator",
+    "17": "Pyro",
+    "18": "Rainmaker",
+    "19": "Ronin",
+    "20": "Scourer",
+    "21": "Seeder",
+    "22": "Sentinel",
+    "23": "Sniper",
+    "24": "Spectre",
+    "25": "Support",
+    "26": "Technical"
+  },
+  "1": {
+    "Name": "Ace",
+    "Hull": "-2",
+    "Agility": "3",
+    "Systems": "1",
+    "Engineering": "0",
+    "HP": "16",
+    "Evasion": "11",
+    "E-Defense": "9",
+    "Heat Capacity": "9",
+    "Armor": "0",
+    "Speed": "6",
+    "Sensors": "10",
+    "Size": "1/2 OR 1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "SS Corpro flight system","Flight Computer","Missile Launcher"
+    ]
+  },
+  "2": {
+    "Name": "Aegis",
+    "Hull": "0",
+    "Agility": "-2",
+    "Systems": "2",
+    "Engineering": "2",
+    "HP": "14",
+    "Evasion": "7",
+    "E-Defense": "10",
+    "Heat Capacity": "12",
+    "Armor": "2",
+    "Speed": "3",
+    "Sensors": "8",
+    "Size": "2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Light Laser","Defense Net"
+    ]
+  },
+  "3": {
+    "Name": "Assassin",
+    "Hull": "1",
+    "Agility": "2",
+    "Systems": "0",
+    "Engineering": "-1",
+    "HP": "15",
+    "Evasion": "12",
+    "E-Defense": "8",
+    "Heat Capacity": "8",
+    "Armor": "0",
+    "Speed": "8",
+    "Sensors": "12",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Kai Bioplating","Variable Knife","Pulse Rifle","Snap Fire (Assassin)"
+    ]
+  },
+  "4": {
+    "Name": "Assault",
+    "Hull": "1",
+    "Agility": "1",
+    "Systems": "1",
+    "Engineering": "1",
+    "HP": "20",
+    "Evasion": "8",
+    "E-Defense": "8",
+    "Heat Capacity": "10",
+    "Armor": "1",
+    "Speed": "4",
+    "Sensors": "8",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Heavy Assault Rifle","Combat Knife"
+    ]
+  },
+  "5": {
+    "Name": "Barricade",
+    "Hull": "0",
+    "Agility": "-2",
+    "Systems": "1",
+    "Engineering": "3",
+    "HP": "16",
+    "Evasion": "6",
+    "E-Defense": "9",
+    "Heat Capacity": "12",
+    "Armor": "1",
+    "Speed": "4",
+    "Sensors": "10",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Cycle Lance","Mobile Printer","Shock Plating"
+    ]
+  },
+  "6": {
+    "Name": "Bastion",
+    "Hull": "2",
+    "Agility": "-3",
+    "Systems": "0",
+    "Engineering": "2",
+    "HP": "16",
+    "Evasion": "6",
+    "E-Defense": "8",
+    "Heat Capacity": "12",
+    "Armor": "3",
+    "Speed": "4",
+    "Sensors": "8",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Rotary Grenade Launcher","Heavy Assault Shield"
+    ]
+  },
+  "7": {
+    "Name": "Berserker",
+    "Hull": "3",
+    "Agility": "2",
+    "Systems": "-2",
+    "Engineering": "-1",
+    "HP": "15",
+    "Evasion": "10",
+    "E-Defense": "6",
+    "Heat Capacity": "8",
+    "Armor": "1",
+    "Speed": "5",
+    "Sensors": "5",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Chain Axe","Volcanic Re-route"
+    ]
+  },
+  "8": {
+    "Name": "Bombard",
+    "Hull": "0",
+    "Agility": "-1",
+    "Systems": "1",
+    "Engineering": "2",
+    "HP": "20",
+    "Evasion": "7",
+    "E-Defense": "12",
+    "Heat Capacity": "12",
+    "Armor": "0",
+    "Speed": "2",
+    "Sensors": "11",
+    "Size": "2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Bombard cannon","Stabilizers","Molded Armor"
+    ]
+  },
+  "9": {
+    "Name": "Breacher",
+    "Hull": "2",
+    "Agility": "0",
+    "Systems": "-1",
+    "Engineering": "1",
+    "HP": "18",
+    "Evasion": "9",
+    "E-Defense": "7",
+    "Heat Capacity": "8",
+    "Armor": "1",
+    "Speed": "5",
+    "Sensors": "5",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Dual Shotguns","BREACH Ram"
+    ]
+  },
+  "10": {
+    "Name": "Cataphract",
+    "Hull": "1",
+    "Agility": "1",
+    "Systems": "0",
+    "Engineering": "0",
+    "HP": "16",
+    "Evasion": "10",
+    "E-Defense": "8",
+    "Heat Capacity": "9",
+    "Armor": "0",
+    "Speed": "6",
+    "Sensors": "8",
+    "Size": "1-2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Ram cannon","Impact thrusters","Snap Fire (Cataphract)"
+    ]
+  },
+  "11": {
+    "Name": "Demolisher",
+    "Hull": "2",
+    "Agility": "-2",
+    "Systems": "0",
+    "Engineering": "2",
+    "HP": "16",
+    "Evasion": "6",
+    "E-Defense": "7",
+    "Heat Capacity": "10",
+    "Armor": "2",
+    "Speed": "4",
+    "Sensors": "8",
+    "Size": "2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Demolisher hammer","Kinetic compensation"
+    ]
+  },
+  "12": {
+    "Name": "Engineer",
+    "Hull": "-1",
+    "Agility": "-1",
+    "Systems": "1",
+    "Engineering": "3",
+    "HP": "20",
+    "Evasion": "7",
+    "E-Defense": "11",
+    "Heat Capacity": "12",
+    "Armor": "0",
+    "Speed": "3",
+    "Sensors": "15",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Flak Cannon","Deployable Turret","Ablative Shielding"
+    ]
+  },
+  "13": {
+    "Name": "Hive",
+    "Hull": "1",
+    "Agility": "-1",
+    "Systems": "2",
+    "Engineering": "0",
+    "HP": "20",
+    "Evasion": "8",
+    "E-Defense": "10",
+    "Heat Capacity": "9",
+    "Armor": "0",
+    "Speed": "5",
+    "Sensors": "15",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Hunter Killer Drone Nexus","Drone Barrage Protocol"
+    ]
+  },
+  "14": {
+    "Name": "Hornet",
+    "Hull": "-2",
+    "Agility": "2",
+    "Systems": "2",
+    "Engineering": "0",
+    "HP": "10",
+    "Evasion": "15",
+    "E-Defense": "8",
+    "Heat Capacity": "7",
+    "Armor": "0",
+    "Speed": "8",
+    "Sensors": "10",
+    "Size": "1/2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Stinger Pistol","SSC Total Suite","Phosphorous barrage","Snap Fire (Hornet)"
+    ]
+  },
+  "15": {
+    "Name": "Marker",
+    "Hull": "-2",
+    "Agility": "2",
+    "Systems": "3",
+    "Engineering": "-1",
+    "HP": "14",
+    "Evasion": "12",
+    "E-Defense": "10",
+    "Heat Capacity": "8",
+    "Armor": "0",
+    "Speed": "6",
+    "Sensors": "20",
+    "Size": "1/2-1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "High Caliber Pistol","Target Marker"
+    ]
+  },
+  "16": {
+    "Name": "Operator",
+    "Hull": "2",
+    "Agility": "2",
+    "Systems": "2",
+    "Engineering": "2",
+    "HP": "14",
+    "Evasion": "10",
+    "E-Defense": "10",
+    "Heat Capacity": "12",
+    "Armor": "0",
+    "Speed": "4",
+    "Sensors": "10",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "'Raptor' plasma rifle","'Nightcloak' type omnishield","Self-erasing","Snap Fire (Operator)"
+    ]
+  },
+  "17": {
+    "Name": "Pyro",
+    "Hull": "1",
+    "Agility": "-1",
+    "Systems": "-1",
+    "Engineering": "3",
+    "HP": "12",
+    "Evasion": "8",
+    "E-Defense": "8",
+    "Heat Capacity": "16",
+    "Armor": "3",
+    "Speed": "4",
+    "Sensors": "8",
+    "Size": "2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Flamethrower","Explosive Vent"
+    ]
+  },
+  "18": {
+    "Name": "Rainmaker",
+    "Hull": "0",
+    "Agility": "1",
+    "Systems": "2",
+    "Engineering": "-1",
+    "HP": "15",
+    "Evasion": "8",
+    "E-Defense": "10",
+    "Heat Capacity": "8",
+    "Armor": "1",
+    "Speed": "3",
+    "Sensors": "15",
+    "Size": "2",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Thundershock missile pods","'Drang' missile rack"
+    ]
+  },
+  "19": {
+    "Name": "Ronin",
+    "Hull": "1",
+    "Agility": "2",
+    "Systems": "-1",
+    "Engineering": "-1",
+    "HP": "18",
+    "Evasion": "10",
+    "E-Defense": "7",
+    "Heat Capacity": "8",
+    "Armor": "0",
+    "Speed": "5",
+    "Sensors": "12",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Carbon Fiber Sword","Mag Parry","Snap Fire (Ronin)"
+    ]
+  },
+  "20": {
+    "Name": "Scourer",
+    "Hull": "1",
+    "Agility": "0",
+    "Systems": "0",
+    "Engineering": "1",
+    "HP": "16",
+    "Evasion": "9",
+    "E-Defense": "8",
+    "Heat Capacity": "12",
+    "Armor": "1",
+    "Speed": "4",
+    "Sensors": "10",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Thermal Lance","Cooling Module"
+    ]
+  },
+  "21": {
+    "Name": "Seeder",
+    "Hull": "0",
+    "Agility": "0",
+    "Systems": "2",
+    "Engineering": "0",
+    "HP": "15",
+    "Evasion": "7",
+    "E-Defense": "10",
+    "Heat Capacity": "10",
+    "Armor": "2",
+    "Speed": "4",
+    "Sensors": "15",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Grav Grenade Launcher","Mine Deployer"
+    ]
+  },
+  "22": {
+    "Name": "Sentinel",
+    "Hull": "2",
+    "Agility": "1",
+    "Systems": "0",
+    "Engineering": "-1",
+    "HP": "20",
+    "Evasion": "9",
+    "E-Defense": "9",
+    "Heat Capacity": "8",
+    "Armor": "0",
+    "Speed": "5",
+    "Sensors": "8",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Combat Shotgun","Retractable Sword","Eye of Midnight"
+    ]
+  },
+  "23": {
+    "Name": "Sniper",
+    "Hull": "0",
+    "Agility": "1",
+    "Systems": "2",
+    "Engineering": "-1",
+    "HP": "15",
+    "Evasion": "10",
+    "E-Defense": "10",
+    "Heat Capacity": "9",
+    "Armor": "0",
+    "Speed": "4",
+    "Sensors": "15",
+    "Size": "1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Anti-Material Rifle","Auto-pistol","Deathmark protocol"
+    ]
+  },
+  "24": {
+    "Name": "Spectre",
+    "Hull": "-2",
+    "Agility": "2",
+    "Systems": "1",
+    "Engineering": "1",
+    "HP": "10",
+    "Evasion": "10",
+    "E-Defense": "10",
+    "Heat Capacity": "8",
+    "Armor": "0",
+    "Speed": "6",
+    "Sensors": "10",
+    "Size": "1/2-1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Machine pistol","ATHENA-class scan","Tactical Cloak"
+    ]
+  },
+  "25": {
+    "Name": "Support",
+    "Hull": "1",
+    "Agility": "-1",
+    "Systems": "0",
+    "Engineering": "2",
+    "HP": "20",
+    "Evasion": "7",
+    "E-Defense": "10",
+    "Heat Capacity": "12",
+    "Armor": "1",
+    "Speed": "4",
+    "Sensors": "12",
+    "Size": "2-3",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Suppressive cannon","Latch drone"
+    ]
+  },
+  "26": {
+    "Name": "Technical",
+    "Hull": "-1",
+    "Agility": "1",
+    "Systems": "2",
+    "Engineering": "0",
+    "HP": "12",
+    "Evasion": "12",
+    "E-Defense": "12",
+    "Heat Capacity": "10",
+    "Armor": "0",
+    "Speed": "5",
+    "Sensors": "10",
+    "Size": "1/2-1",
+    "Tags": [
+      "Mech"
+    ],
+    "Modules": [
+      "Autogun","HORUS hacker","Snap Fire (Technical)"
+    ]
+  }
+}
