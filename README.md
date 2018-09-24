@@ -4,7 +4,9 @@ This project is intended to make generating NPC characters for the Lancer RPG sy
 
 I am not a professional developer, or even a good one. Any improvement to this project would be appreciated.
 
-To generate an NPC, simply run the Generate-LancerEnemies.ps1 script. There are several easy to use prompts that allow for quickly creating and modifying enemy classes.
+To generate an NPC, simply run the Generate-LancerEnemies.ps1 script by right-clicking the file and selecting "Run with PowerShell". There are several easy to follow prompts that allow for quickly creating and modifying enemy classes. This does the legwork of tossing the NPC together.
+
+Currently, NPC generation is restricted to Tier 1, and you must add optional systems manually. 
 
 Enemy Classes are stored in Classes.json, Templates in Templates.json, and all Modules, Systems, and Weapons are in the Modules.json. Adding more Classes, Templates, or Modules is relatively straightforward, and shouldn't require too much hassle on the user's end.
 

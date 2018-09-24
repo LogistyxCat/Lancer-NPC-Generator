@@ -1,23 +1,21 @@
 <# 
     Date:    2018-09-22
-    Version: 0.6.3
+    Version: 0.6.8
     Comment: Generates an enemy NPC for LANCER based on NPC Classes and Templates
 #>
 <# To do
-1) Add the ability to attach multiple (non-exclusive) templates
-    a) Needs to replace tags where necessary (eg. Vehicle template)
-2) Add tier modifications
-3) Add the ability to select optional modules
-4) Add the ability to add template modules
+1) Add tier modifications
+2) Add the ability to select optional modules
+3) Add the ability to add template modules
 #>
 
 
 # Asks the user if they would like to save $BaseClass to a file
-function saveDialog {
-    $userInput = Read-Host -Prompt "`nWould you like to save the generated NPC? [y/n]`n>"
-    if ($userInput.ToLower().StartsWith("n")) {
+function save_dialog {
+    $user_input = Read-Host -Prompt "`nWould you like to save the generated NPC? [y/n]`n>"
+    if ($user_input.ToLower().StartsWith("n")) {
         Write-Host "`nYou may wish to copy the generated NPC.`n"
-        $BaseClass ; addModules ; Start-Sleep -Seconds 1
+        $BaseClass ; append_modules ; Start-Sleep -Seconds 1
         Read-Host "`nWhen you are done, input Return" | Out-Null
         Write-Host "Exitting"
         exit
@@ -25,16 +23,16 @@ function saveDialog {
     if (!(Test-Path -Path .\outfiles)) {
         New-Item -Path .\outfiles -ItemType Directory | Out-Null
     }
-    $userInput = Read-Host -Prompt "What would you like to name the file?`n>"
-    $filename = $userInput + ".txt"
+    $user_input = Read-Host -Prompt "What would you like to name the file?`n>"
+    $filename = $user_input + ".txt"
     $BaseClass > .\outfiles\$filename | Out-Null
-    addModules >> .\outfiles\$filename | Out-Null
+    append_modules >> .\outfiles\$filename | Out-Null
     Write-Host "`nSaved the finished NPC to .\outfiles\$filename"
     exit
 }
 
 # Modifies the HP of $BaseClass
-function modHP {
+function modify_hp {
     if ($Template.'Bonus HP') {
         [Int]$BaseClass.HP += $Template.'Bonus HP'
         $Template.PsObject.Properties.Remove('Bonus HP')
@@ -46,25 +44,24 @@ function modHP {
 }
 
 # Modifies stats related to durability
-function modDurability {
+function modify_durability {
+    # Create static array of stats related to durability
     $durability = @('Structure','Reactor Stress')
     foreach ($stat in $durability) {
-        if ($Template.$stat -and !$BaseClass.$stat) {
-            Add-Member -InputObject $BaseClass -MemberType NoteProperty -Name $stat -Value $Template.$stat
+        # If both $Template and $BaseClass have the stat, add them together
+        if ($Template.$stat) {
+            [Int]$BaseClass.$stat = $Template.$stat
             $Template.PsObject.Properties.Remove($stat)
         }
-        elseif ($Template.$stat -and $BaseClass.$stat) {
-            [Int]$BaseClass.$stat += $Template.$stat
-            $Template.PsObject.Properties.Remove($stat)
-        }
-        elseif (!$BaseClass.$stat) {
-            Add-Member -InputObject $BaseClass -MemberType NoteProperty -Name $stat -Value "1"
+        elseif ($Template."Bonus $stat") {
+            [Int]$BaseClass.$stat += $Template."Bonus $stat"
+            $Template.PsObject.Properties.Remove("Bonus $stat")
         }
     }
 }
 
 # Adds the base class modules to final output
-function addModules {
+function append_modules {
     $modules = Get-Content -Raw -Path .\Modules.json | ConvertFrom-Json
     foreach ($mod in $BaseClass.Modules) {
         $mod
@@ -75,22 +72,31 @@ function addModules {
     }
 }
 
-# Add a template to the class
-function addTemplate {
+# Adds a template to the selected class
+function add_template {
     # Print the available templates
     while (1) {
         Clear-Host
-        Write-Host "`nPlease select one of the following templates:`n"
-        foreach ($t in $templates.Index.PsObject.Properties) {
-            Write-Host $t.Name"`b."$t.Value
+        Write-Host "`nPlease select one of the following templates, starting with Exclusives:`n"
+        # Create an array to house the classes list and print options
+        $i = 1
+        foreach($item in $template_index) {
+            if ($templates.$item.Exclusive) {
+                Write-Host "$i. $item (Exclusive)"
+            }
+            else {
+                Write-Host "$i. $item"
+            }
+            $i++
         }
-        # Get user input
-        $userInput = Read-Host -Prompt "`nEnter ID value`n>"
-        if ($templates.$userInput) {
-            $Template = $templates.$userInput
+        # Get user input and select a valid template
+        $user_input = Read-Host -Prompt "`nEnter template ID value`n>"
+        $user_input = [Int]$user_input - 1
+        if ($templates.($template_index[$user_input])) {
+            $Template = $templates.($template_index[$user_input])
             # Remove the template so you can't apply the same one again
-            $templates.PsObject.Properties.Remove($userinput)
-            $templates.Index.PsObject.Properties.Remove($userinput)
+            $template_index.Remove($Template.Name)
+            $templates.PsObject.Properties.Remove($Template.Name)
             break
         }
         else {
@@ -101,21 +107,25 @@ function addTemplate {
 
     Write-Host "`nYou have selected the following template:`n"
     $Template ; Start-Sleep -Seconds 1
-    $userInput = Read-Host -Prompt "`nWould you like to continue? [y/n]`n>"
-    if ($userInput.ToLower().StartsWith("n")) {
-        $userInput = Read-Host -Prompt "`nAre you sure? [y/n]`n>"
-        if ($userInput.ToLower().StartsWith("n")) {
-            saveDialog
+    $user_input = Read-Host -Prompt "`nWould you like to continue? [y/n]`n>"
+    if ($user_input.ToLower().StartsWith("n")) {
+        $user_input = Read-Host -Prompt "`nAre you sure? [y/n]`n>"
+        if ($user_input.ToLower().StartsWith("n")) {
+            save_dialog
         }
     }
 
     # Modify the $BaseClass.Tags value
-    $tags = $BaseClass.Tags + $Template.Name
+    [System.Collections.ArrayList]$tags = $BaseClass.Tags + $Template.Name
+    # Check if $Template is for a Ship or Vehicle
+    if ("Vehicle","Ship" -contains $Template.Name) {
+        $tags.Remove("Mech")
+    }
     Add-Member -InputObject $BaseClass -MemberType NoteProperty -Name Tags -Value $tags -Force
 
     # Modify HP, Structure, and Reactor Stress
-    modHP
-    modDurability
+    modify_hp
+    modify_durability
 
     # Add all of the new properties
     foreach ($p in Get-Member -InputObject $Template -MemberType Properties  | Sort-Object -Property Definition | Select-Object -Property Name | Sort-Object -Property Definition | Where-Object -NotMatch -Property "Name" -Value "Name") {
@@ -126,45 +136,49 @@ function addTemplate {
     $BaseClass ; Start-Sleep -Seconds 1
     
     # Ask if the user would like to add another template
-    $userInput = Read-Host -Prompt "`nWould you like to add another template? [y/n]`n>"
-    if ($userInput.ToLower().StartsWith("n")) {
-        saveDialog
+    $user_input = Read-Host -Prompt "`nWould you like to add another template? [y/n]`n>"
+    if ($user_input.ToLower().StartsWith("n")) {
+        save_dialog
+    
     }
-    elseif ($userInput.ToLower().StartsWith("y")) {
+    elseif ($user_input.ToLower().StartsWith("y")) {
         # Remove other Exclusive templates
         if ($Template.Exclusive) {
             foreach ($t in $templates.PsObject.Properties.Name) {
                 if ($templates.$t.Exclusive) {
+                    $template_index.Remove($t)
                     $templates.PsObject.Properties.Remove($t)
-                    $templates.Index.PsObject.Properties.Remove($t)
                 }
             }
         }
         # Loop
-        addTemplate
+        add_template
     }
     else {
         Write-Host "Unrecognized option. Please enter 'y' or 'n'."
     }
 }
 
-# Main
+# Main script
 Clear-Host
-# Assemble the base class of the NPC
+# Assemble the NPC classes and templates
 $classes = Get-Content -Raw -Path .\Classes.json | ConvertFrom-Json
 $templates = Get-Content -Raw -Path .\Templates.json | ConvertFrom-Json
 
 # Loop to get the base class selection
 while (1) {
-    # Print options to the user
-    Write-Host "`nPlease select one of the following as the base NPC class:`n"
-    foreach ($c in $classes.Index.PsObject.Properties) {
-        Write-Host $c.Name"`b." $c.Value
+    # Create an array to house the classes list and print options
+    [System.Collections.ArrayList]$class_index = $classes.Index
+    $i = 1
+    Write-Host "`nPlease select one of the following classes:`n"
+    foreach($item in $class_index) {
+        Write-Host "$i. $item"
+        $i++
     }
     # Get user selection
-    $userInput = Read-Host -Prompt "`nEnter ID value`n>"
-    if ($classes.$userInput) {
-        $BaseClass = $classes.$userInput
+    $user_input = Read-Host -Prompt "`nEnter ID value`n>"
+    if ($classes.$user_input) {
+        $BaseClass = $classes.$user_input
         break
     }
     else {
@@ -177,13 +191,16 @@ $BaseClass ; Start-Sleep -Seconds 1
 
 # Ask if user would like to add a template, otherwise exit
 while(1) {
-    $userInput = Read-Host -Prompt "`nWould you like to add a template? [y/n]`n>"
-    if ($userInput.ToLower().StartsWith("n")) {
-        modDurability
-        saveDialog
+    $user_input = Read-Host -Prompt "`nWould you like to add a template? [y/n]`n>"
+    if ($user_input.ToLower().StartsWith("n")) {
+        modify_durability
+        save_dialog
+    
     }
-    elseif ($userInput.ToLower().StartsWith("y")) {
-        addTemplate
+    elseif ($user_input.ToLower().StartsWith("y")) {
+        # Create an index of available templates
+        [System.Collections.ArrayList]$template_index = $templates.Index
+        add_template
     }
     else {
         Write-Host "Unrecognized option. Please enter 'y' or 'n'."
