@@ -1,6 +1,6 @@
 <# 
     Date:    2018-09-22
-    Version: 0.6.8
+    Version: 0.6.9
     Comment: Generates an enemy NPC for LANCER based on NPC Classes and Templates
 #>
 <# To do
@@ -33,21 +33,22 @@ function save_dialog {
 
 # Modifies the HP of $BaseClass
 function modify_hp {
-    if ($Template.'Bonus HP') {
-        [Int]$BaseClass.HP += $Template.'Bonus HP'
-        $Template.PsObject.Properties.Remove('Bonus HP')
-    }
-    elseif ($Template.'Max HP') {
-        [Int]$BaseClass.HP = $Template.'Max HP'
-        $Template.PsObject.Properties.Remove('Max HP')
+    if ([Int]$BaseClass.HP -ne 1) {
+        if ($Template.'Bonus HP') {
+            [Int]$BaseClass.HP += $Template.'Bonus HP'
+            $Template.PsObject.Properties.Remove('Bonus HP')
+        }
+        elseif ($Template.'Max HP') {
+            [Int]$BaseClass.HP = $Template.'Max HP'
+            $Template.PsObject.Properties.Remove('Max HP')
+        }
     }
 }
 
 # Modifies stats related to durability
 function modify_durability {
-    # Create static array of stats related to durability
-    $durability = @('Structure','Reactor Stress')
-    foreach ($stat in $durability) {
+    # For every stat that is related to durability
+    foreach ($stat in 'Structure','Reactor Stress','Heat Capacity') {
         # If both $Template and $BaseClass have the stat, add them together
         if ($Template.$stat) {
             [Int]$BaseClass.$stat = $Template.$stat
@@ -57,6 +58,10 @@ function modify_durability {
             [Int]$BaseClass.$stat += $Template."Bonus $stat"
             $Template.PsObject.Properties.Remove("Bonus $stat")
         }
+        elseif ($Template."No $stat") {
+            $BaseClass.PsObject.Properties.Remove($stat)
+            $Template.PsObject.Properties.Remove("No $stat")
+        }
     }
 }
 
@@ -65,8 +70,8 @@ function append_modules {
     $modules = Get-Content -Raw -Path .\Modules.json | ConvertFrom-Json
     foreach ($mod in $BaseClass.Modules) {
         $mod
-        foreach ($prop in $modules.$mod) {
-            $prop
+        foreach ($line in $modules.$mod) {
+            $line
         }
         ""
     }
@@ -80,23 +85,21 @@ function add_template {
         Write-Host "`nPlease select one of the following templates, starting with Exclusives:`n"
         # Create an array to house the classes list and print options
         $i = 1
-        foreach($item in $template_index) {
+        foreach($item in $templates.PsObject.Properties.Name) {
             if ($templates.$item.Exclusive) {
-                Write-Host "$i. $item (Exclusive)"
+                Write-Host "$item. $($templates.$item.Name) (Exclusive)"
             }
             else {
-                Write-Host "$i. $item"
+                Write-Host "$item. $($templates.$item.Name)"
             }
             $i++
         }
         # Get user input and select a valid template
         $user_input = Read-Host -Prompt "`nEnter template ID value`n>"
-        $user_input = [Int]$user_input - 1
-        if ($templates.($template_index[$user_input])) {
-            $Template = $templates.($template_index[$user_input])
+        if ($templates.$user_input) {
+            $Template = $templates.$user_input
             # Remove the template so you can't apply the same one again
-            $template_index.Remove($Template.Name)
-            $templates.PsObject.Properties.Remove($Template.Name)
+            $templates.PsObject.Properties.Remove($user_input)
             break
         }
         else {
@@ -118,8 +121,8 @@ function add_template {
     # Modify the $BaseClass.Tags value
     [System.Collections.ArrayList]$tags = $BaseClass.Tags + $Template.Name
     # Check if $Template is for a Ship or Vehicle
-    if ("Vehicle","Ship" -contains $Template.Name) {
-        $tags.Remove("Mech")
+    if ('Vehicle','Ship' -contains $Template.Name) {
+        $tags.Remove('Mech')
     }
     Add-Member -InputObject $BaseClass -MemberType NoteProperty -Name Tags -Value $tags -Force
 
@@ -145,13 +148,13 @@ function add_template {
         # Remove other Exclusive templates
         if ($Template.Exclusive) {
             foreach ($t in $templates.PsObject.Properties.Name) {
-                if ($templates.$t.Exclusive) {
+                if ($Template.Exclusive -contains $templates.$t.Name) {
                     $template_index.Remove($t)
                     $templates.PsObject.Properties.Remove($t)
                 }
             }
         }
-        # Loop
+        # Loops
         add_template
     }
     else {
@@ -168,12 +171,9 @@ $templates = Get-Content -Raw -Path .\Templates.json | ConvertFrom-Json
 # Loop to get the base class selection
 while (1) {
     # Create an array to house the classes list and print options
-    [System.Collections.ArrayList]$class_index = $classes.Index
-    $i = 1
     Write-Host "`nPlease select one of the following classes:`n"
-    foreach($item in $class_index) {
-        Write-Host "$i. $item"
-        $i++
+    foreach($item in $classes.PsObject.Properties.Name) {
+        Write-Host "$item. $($classes.$item.Name)"
     }
     # Get user selection
     $user_input = Read-Host -Prompt "`nEnter ID value`n>"
@@ -199,7 +199,6 @@ while(1) {
     }
     elseif ($user_input.ToLower().StartsWith("y")) {
         # Create an index of available templates
-        [System.Collections.ArrayList]$template_index = $templates.Index
         add_template
     }
     else {

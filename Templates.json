@@ -1,111 +1,99 @@
 {
-    "Index": [
-        "Ultra",
-        "Elite",
-        "Grunt",
-        "Veteran",
-        "Exotic",
-        "Drone",
-        "Mercenary",
-        "Commander",
-        "Pirate",
-        "Spacer",
-        "Outworlder",
-        "Vehicle",
-        "Ship"
-    ],
-    "Ultra": {
+    "1": {
         "Name": "Ultra",
-        "Exclusive": true,
+        "Exclusive": ["Elite","Grunt"],
         "Bonus HP": 5,
         "Structure": 4,
         "Reactor Stress": 4,
-        "Bonus Activations": "The Ultra can be activated again (take another turn) each round. If the Ultra is facing more than 4 players, it takes another activation (for a total of 3). It regains spent reactions each time it takes a turn.",
+        "Bonus Activations": "The Ultra can be activated again (take another turn) each round. If\nthe Ultra is facing more than 4 players, it takes another activation (for a total of 3). It\nregains spent reactions each time it takes a turn.",
         "Bonus Systems": "1-2 additional optional systems, and 1-2 Ultra Traits or systems (pg 351).",
         "Deadly": "The Ultra can critical hit, dealing an extra +2 bonus damage/tier on critical hits.",
-        "Juggernaut (trait)": "At the start of its turn, the Ultra ends one condition affecting it other than destroyed. If it rolls a ‘system destroyed’ result on a critical check, it is instead jammed until the end of its next turn (it doesn’t lose the system or weapon).",
-        "Legendary (trait)": "The Ultra can enter the CRITICAL state and is not destroyed when reaching 0 HP.",
-        "Reflex (trait)": "The Ultra can make any number of overwatch attacks per round (instead of just 1). It can only attack the same target 1/turn with overwatch."
+        "Juggernaut (trait)": "At the start of its turn, the Ultra ends one condition affecting it other\nthan destroyed. If it rolls a ‘system destroyed’ result on a critical check, it is instead\njammed until the end of its next turn (it doesn’t lose the system or weapon).",
+        "Legendary (trait)": "The Ultra can enter the CRITICAL state and is not destroyed when\nreaching 0 HP.",
+        "Reflex (trait)": "The Ultra can make any number of overwatch attacks per round (instead of\njust 1). It can only attack the same target 1/turn with overwatch."
     },
-    "Elite": {
+    "2": {
         "Name": "Elite",
-        "Exclusive": true,
+        "Exclusive": ["Ultra","Grunt"],
         "Structure": 2,
         "Reactor Stress": 2,
         "Bonus Systems": "The Elite gains +1 more optional system than normal",
         "Bonus Activations": "The Elite can be activated twice a round."
     },
-    "Grunt": {
+    "3": {
         "Name": "Grunt",
-        "Exclusive": true,
+        "Exclusive": ["Veteran","Squad","Ultra","Elite"],
         "Max HP": 1,
         "Max Systems": 1,
-        "Surprisingly Hard": " Grunts don’t take damage from systems, talents, or weapons that automatically deal damage (such as the reliable tag). When they would take half damage on a successful save from a source of damage, they instead take 0.",
-        "Bonus Activations": "When a Grunt is activated, up to 2 other grunts can also be activated at the same time and take their turns at once",
-        "Max Attacks": "The Grunt can’t attack with more than 1 weapon when it takes the attack action, no matter how many it has",
-        "Max Damage": "None of the grunt’s attacks can deal more than 4 damage, heat, or burn total per attack at tier 1. This increases to 6 at tier II and 8 at tier III. Adjust as needed."
+        "No Heat Capacity": true,
+        "No Reactor Stress": true,
+        "Weak": "The Grunt’s maximum HP becomes 1, with 1 structure. It loses any heat capacity it\nhas (so it takes energy damage instead of heat). It cannot gain structure or heat capacity\nin any way.",
+        "Surprisingly Hard": " Grunts don’t take damage from systems, talents, or weapons that\nautomatically deal damage (such as the reliable tag). When they would take half damage\non a successful save from a source of damage, they instead take 0.",
+        "Bonus Activations": "When a Grunt is activated, up to 2 other grunts can also be activated\nat the same time and take their turns at once",
+        "Max Attacks": "The Grunt can’t attack with more than 1 weapon when it takes the attack\naction, no matter how many it has",
+        "Max Damage": "None of the grunt’s attacks can deal more than 4 damage, heat, or burn\ntotal per attack at tier 1. This increases to 6 at tier II and 8 at tier III. Adjust as needed."
     },
-    "Veteran": {
+    "4": {
         "Name": "Veteran",
         "Bonus Structure": 1,
         "Bonus Reactor Stress": 1,
-        "Veterancy": "The Veteran gains +1 accuracy on all checks of one statistic: Hull, Agility, Systems, Engineering (choose on creation)",
-        "Veteran Systems": "The Veteran gains 1 Veteran trait per tier (pg. 355)"
+        "Veteran Systems": "The Veteran gains 1 Veteran trait per tier (pg. 355)",
+        "Veterancy": "The Veteran gains +1 accuracy on all checks of one statistic:Hull, Agility,\nSystems, Engineering (choose on creation)"
     },
-    "Exotic": {
+    "5": {
         "Name": "Exotic",
         "Xenotech": "Scans reveal no information about exotic modules",
         "Hardened Target": "Hostile tech actions take +1 difficulty against exotic targets",
-        "Exotic systems": "Any NPC with the exotic tag can choose one or two of the optional Exotic modules (pg. 357)"
+        "Exotic systems": "Any NPC with the exotic tag can choose one or two of the optional\nExotic modules (pg. 357)"
     },
-    "Drone": {
+    "6": {
         "Name": "Drone",
-        "Bonus HP": "The Drone gets +5 HP to represent its lack of pilot. It can take damage that would normally blow through a cockpit and kill a human.",
-        "No Pilot": "The Drone permanently suffers from the Impaired condition. It cannot make complex decisions or moral judgements. However, it is also immune to all systems and actions that affect the pilot (it doesn’t have any).",
+        "Bonus HP": 5,
+        "No Pilot": "The Drone permanently suffers from the Impaired condition. It cannot make\ncomplex decisions or moral judgements. However, it is also immune to all systems and\nactions that affect the pilot (it doesn’t have any).",
         "Vulnerable to Tech": "All hostile tech actions against the Drone can be made with +1 Accuracy"
     },
-    "Mercenary": {
+    "7": {
         "Name": "Mercenary",
-        "Opportunist": "If an allied target is adjacent to the mercenary’s target, it gets +1 Accuracy on all attack rolls against that target",
-        "Mercenary Systems": "A mercenary can choose from the list of Mercenary systems and traits (pg. 358) when choosing optional systems and modules"
+        "Opportunist": "If an allied target is adjacent to the mercenary’s target, it gets +1 Accuracy\non all attack rolls against that target",
+        "Mercenary Systems": "A mercenary can choose from the list of mercenary systems and\ntraits below when choosing optional systems and modules"
     },
-    "Commander": {
+    "8": {
         "Name": "Commander",
         "Bonus Structure": 1,
         "Bonus Reactor Stress": 1,
-        "Command": "Once per round, the Commander can cause an allied target it can see to reroll any single attack roll or check as a reaction. The commander can’t use this reaction if it is Jammed.",
-        "Commander Traits": "The commander can choose one of the Commander traits (pg. 359). These traits don’t function if the commander is Jammed."
+        "Command": "Once per round, the Commander can cause an allied target it can see to reroll\nany single attack roll or check as a reaction. The commander can’t use this reaction if\nit is Jammed.",
+        "Commander Traits": "The commander can choose one of the following commander traits.\nThese traits don’t function if the commander is Jammed."
     },
-    "Pirate": {
+    "9": {
         "Name": "Pirate",
-        "Deadly (trait)": "The pirate can critical hit, dealing +2/3/4 bonus damage on a 20+ ranged or melee attack roll",
+        "Deadly (trait)": "The pirate can critical hit, dealing +2/3/4 bonus damage on a 20+ rangedor melee attack roll",
         "Pirate modules": "The pirate can choose from the Pirate modules (pg. 360) when choosing optional systems"
     },
-    "Spacer": {
+    "10": {
         "Name": "Spacer",
-        "Maneuverable": "The Spacer does not suffer the impaired condition for operating in space, underwater, or in zero-g environments and always counts as having an EVA module in those environments.",
-        "Optional modules": "The Spacer can choose from optional Spacer modules (pg. 361) when deciding additional modules"
+        "Maneuverable": "The Spacer does not suffer the impaired condition for operating in space,\nunderwater, or in zero-g environments and always counts as having an EVA module in\nthose environments.",
+        "Optional modules": "The Spacer can choose from optional Spacer modules (pg. 361) when\ndeciding additional modules"
     },
-    "Outworlder": {
+    "11": {
         "Name": "Outworlder",
-        "Resourceful": "The Outworlder gains +1 use to all (limited) use weapons, actions, and deployables (including the repair action below - not yet included in the profile).",
+        "Resourceful": " The Outworlder gains +1 use to all (limited) use weapons, actions, and\ndeployables (including the repair action below - not yet included in the profile).",
         "Repair (limited 1)": "This mech heals 4/6/8 hit points and ends one condition currently affecting it (impaired, crippled, immobilized, shut down, jammed)"
     },
-    "Vehicle": {
+    "12": {
         "Name": "Vehicle",
-        "Limited Maneuverability": "A vehicle must always move in a straight line (though it can move and boost in separate directions). A vehicle cannot climb or swim. It gets +2 Accuracy on checks to avoid being knocked prone, but cannot right itself without assistance.",
-        "Crew": "A vehicle might be operated by more than one crew member (typically a minimum number of crew equal to 1/2 of the vehicle’s size). As long at least half the crew is alive, the vehicle can still function.",
+        "Limited Maneuverability": "A vehicle must always move in a straight line (though it can\nmove and boost in separate directions). A vehicle cannot climb or swim. It gets +2\nAccuracy on checks to avoid being knocked prone, but cannot right itself without\nassistance.",
+        "Crew": "A vehicle might be operated by more than one crew member (typically a minimum\nnumber of crew equal to 1/2 of the vehicle’s size). As long at least half the crew is alive, the\nvehicle can still function.",
         "No manipulators": "A vehicle cannot initiate a grapple, pick up, or manipulate items",
-        "Type": "You can give a vehicle one or more of the types listed in the Vehicle section (pg. 362)"
+        "Type": "You can give a vehicle one or more of the followingtypes:\nFlier: A flying vehicle can fly when it moves or boosts\nTransport: A transport vehicle can hold one squad or a number of entities whose\ntotal size (added together) is less than its size\nTreads or Hover: A Treaded or Hover vehicle ignores difficult terrain"
     },
-    "Ship": {
+    "13": {
         "Name": "Ship",
-        "Flier": "A ship always counts as having an EVA module in space. In atmosphere, it can fly with either normal flight or hover flight (depending on type). If a ship is grounded without landing, it is immobilized. If it is immobilized, knocked prone, or stunned mid-air, it crashes.",
-        "Massive size": "A ship is typically much larger than a mech. If its size is less than 4, increase its size to 4. This template describes ships that can be engaged on a ship-tomech level about up to size 6-8. Much larger ships (size 10/20+) are usually too heavily armored for mech-mounted weapons to harm",
-        "Crew": "A ship might be operated by more than one crew member (typically a minimum number of crew equal to 1/2 of the vehicle’s size). As long at least half the crew is alive, the ship can still function.",
+        "Flier": "A ship always counts as having an EVA module in space. In atmosphere, it can fly\nwith either normal flight or hover flight (depending on type). If a ship is grounded without\nlanding, it is immobilized. If it is immobilized, knocked prone, or stunned mid-air, it\ncrashes.",
+        "Massive size": "A ship is typically much larger than a mech. If its size is less than 4,\nincrease its size to 4. This template describes ships that can be engaged on a ship-tomech level about up to size 6-8. Much larger ships (size 10/20+) are usually too heavily\narmored for mech-mounted weapons to harm",
+        "Crew": "A ship might be operated by more than one crew member (typically a minimum\nnumber of crew equal to 1/2 of the vehicle’s size). As long at least half the crew is alive, the\nship can still function.",
         "Bonus HP": 5,
         "No manipulators": "A ship cannot initiate a grapple, pick up, or manipulate items",
         "Limited melee attacks": "A ship cannot make melee attacks other than Ram",
-        "Transport": "A transport ship can hold one squad or a number of entities whose total size (added together) is less than its size"
+        "Transport": "A transport ship can hold one squad or a number of entities whose total size\n(added together) is less than its size"
     }
 }
