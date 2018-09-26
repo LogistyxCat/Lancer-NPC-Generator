@@ -23,7 +23,7 @@ function save_dialog {
     if (!(Test-Path -Path .\outfiles)) {
         New-Item -Path .\outfiles -ItemType Directory | Out-Null
     }
-    $user_input = Read-Host -Prompt "What would you like to name the file?`n>"
+    $user_input = Read-Host -Prompt "`nWhat would you like to name the file?`n>"
     $filename = $user_input + ".txt"
     $BaseClass > .\outfiles\$filename | Out-Null
     append_modules >> .\outfiles\$filename | Out-Null
@@ -113,7 +113,7 @@ function add_template {
     $user_input = Read-Host -Prompt "`nWould you like to continue? [y/n]`n>"
     if ($user_input.ToLower().StartsWith("n")) {
         $user_input = Read-Host -Prompt "`nAre you sure? [y/n]`n>"
-        if ($user_input.ToLower().StartsWith("n")) {
+        if ($user_input.ToLower().StartsWith("y")) {
             save_dialog
         }
     }
