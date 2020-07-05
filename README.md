@@ -1,4 +1,6 @@
-# Lancer-NPC-Generator
+# Lancer-NPC-Generator (DEPRECATED)
+
+### This project is deprecated due to the more professional and useable Comp/Con. Please utilize the official helper application.
 
 This project is intended to make generating NPC characters for the Lancer RPG system fast and easy.
 
